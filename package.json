@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "npx del _site",
+    "predev": "npm run clean",
+    "dev": "ELEVENTY_ENV=dev eleventy --serve --quiet & npx @tailwindcss/cli -i src/_includes/tailwind.css -o _site/style.css --minify --watch",
+    "build": "ELEVENTY_ENV=prod eleventy & npx @tailwindcss/cli -i src/_includes/tailwind.css -o _site/style.css --minify"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@tailwindcss/cli": "^4.1.4",
+    "del-cli": "^6.0.0",
+    "html-minifier-terser": "^7.2.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.1.4"
+  }
+}
